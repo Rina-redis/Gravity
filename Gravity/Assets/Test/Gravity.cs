@@ -11,18 +11,16 @@ public class Gravity : MonoBehaviour
 
         void Awake()
         {
-      
             rb = GetComponent<Rigidbody>();
             rb.useGravity = false;
             gravity = Physics.gravity;
-            ReverseGravity();
-    }
+                  }
         private void Update()
         {
             if (Input.GetKey(KeyCode.Alpha0))
             {
                 Debug.Log("Click");
-              
+                ReverseGravity();
             }
         }
 

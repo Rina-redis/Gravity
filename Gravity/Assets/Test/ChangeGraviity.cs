@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeGraviity : MonoBehaviour
 {
+    public int koef = 1;
     public Rigidbody player;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,20 @@ public class ChangeGraviity : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha0))
         {
             Debug.Log("Click");
-           // player.useGravity = false;
-            player.AddForce(transform.up * 500);
+           // Physics.gravity = Vector3.up;
+
+            player.useGravity = false;
+            player.AddForce(transform.up * koef);
+            
+        }
+        if (Input.GetKey(KeyCode.Alpha9))
+        {
+            Debug.Log("Click");
+            // Physics.gravity = Vector3.up;
+
+            player.useGravity = true;
+            player.AddForce(-transform.up * koef);
+
         }
     }
    
